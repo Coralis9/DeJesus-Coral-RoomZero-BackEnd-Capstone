@@ -2,8 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const User = require('./models/Users');  
-
+const user = require('./models/Users');
+const userRoutes = require('./routes/UserRoutes');  
 const authRoutes = require('./routes/authRoutes');
 const gameRoutes = require('./routes/GameRoutes');
 const statsRoutes = require('./routes/StatsRoutes');
@@ -25,7 +25,8 @@ app.get('/', (req, res) =>
 
 // Use Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/game', gameRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/game',  gameRoutes);
 app.use('/api/stats', statsRoutes);
 
 app.listen(PORT, () => {
@@ -47,3 +48,4 @@ You're paralyzed" 🎶
 🧛‍♂️ Running on PORT ${PORT}... Beware who enters.
   `);
 });
+
