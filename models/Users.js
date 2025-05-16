@@ -56,13 +56,6 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
-// // Optional: virtual for display purposes
-// userSchema.virtual('fastestTimeFormatted').get(function () {
-//   return `${this.fastestTime.minutes}m ${this.fastestTime.seconds}s`;
-// });
-
-// userSchema.set('toJSON', { virtuals: true });
-
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
