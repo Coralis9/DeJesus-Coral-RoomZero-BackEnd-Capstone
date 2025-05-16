@@ -5,7 +5,7 @@ const User = require('../models/Users');
 const verifyToken = require('../Jwt/verifyToken');
 const GameHistory = require('../models/GameHistory');
 
-const REQUIRED_ITEMS = ['key', 'flashlight', 'map', 'notebook']; // Customize this
+const REQUIRED_ITEMS = ['key', 'flashlight', 'map', 'notebook']; 
 
 
 router.post('/start-game', verifyToken, async (req, res) => {
